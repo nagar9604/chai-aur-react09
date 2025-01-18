@@ -1,3 +1,4 @@
+import Chai from "./chai"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-    <h1 className="bg-green-400">tailwind css</h1>
+    
     </>
   )
 }
