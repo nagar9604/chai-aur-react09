@@ -1,118 +1,125 @@
-import React from 'react'
+import React, { useState } from "react";
+import { Link ,useNavigate} from "react-router-dom";
 
-function Dashboard() {
-    const [showModal, setShowModal] = useState(false);
-    const [currentService, setCurrentService] = useState('');
-    const [balance, setBalance] = useState(1000); // Simulated balance
-    
+
+const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
   
-    const handleLogout = () => {
-      setIsLoggedIn(false);
-    };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      return;
+    }
+    setError("");
+    alert(`Logged in with Email: ${email}`);
+  };
   
-    // Show modal for each service
-    const handleServiceClick = (serviceName) => {
-      setCurrentService(serviceName);
-      setShowModal(true);
-    };
-  
-    // Close modal
-    const closeModal = () => {
-      setShowModal(false);
-    };
-  
-    return (
-      <>
-        <div>
-  
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container">
-              <a className="navbar-brand" href="#">MyBank</a>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ml-auto">
-                  <li className="nav-item active">
-                    <a className="nav-link" href="#">Home</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Services</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">About Us</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Contact</a>
-                  </li>
-  
-                  <li className="nav-item">
-                    <button className="btn btn-primary" onClick={goToLoginpage}>Login</button>
-                  </li>
-                
-                 
-                
-                </ul>
-              </div>
-            </div>
-          </nav>
-  
-  
-          <header className="jumbotron jumbotron-fluid text-center">
-            <div className="container">
-              <h1 className="display-4">Welcome to MyBank</h1>
-              <p className="lead">Your trusted financial partner</p>
-            </div>
-          </header>
-  
-  
+
+  return (
+    <div className="center-container" >
+
+    <div
+      className="container-fluid d-flex justify-content-center align-items-center"
+      style={{
+        height: "75vh",
+        backgroundImage:'url("https://images.freecreatives.com/wp-content/uploads/2016/04/Black-Web-Template-Background.jpg")',
+        backgroundSize: 'cover',
+        backdropFilter:'blur(75vh)',
+        zIndex:-1,
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <div
+        className="card p-4 shadow"
+        style={{
+          width: "400px",
+          borderRadius: "10px",
+          backgroundColor: 'rgba(300, 300, 300, 0.4)',
+          zIndex:1,
           
-  
-  
-          <div className="container text-center my-5">
-            <h2>Our Services</h2>
-            <div className="row">
-              <div className="col-md-4">
-                <div className="card" onClick={() => handleServiceClick('Personal Banking')}>
-                  <img src="https://via.placeholder.com/150" className="card-img-top" alt="Service 1" />
-                  <div className="card-body">
-                    <h5 className="card-title">Personal Banking</h5>
-                    <p className="card-text">Manage your personal accounts with ease and security.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="card" onClick={() => handleServiceClick('Business Solutions')}>
-                  <img src="https://via.placeholder.com/150" className="card-img-top" alt="Service 2" />
-                  <div className="card-body">
-                    <h5 className="card-title">Business Solutions</h5>
-                    <p className="card-text">Financial tools designed for businesses of all sizes.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="card" onClick={() => handleServiceClick('Loans & Mortgages')}>
-                  <img src="https://via.placeholder.com/150" className="card-img-top" alt="Service 3" />
-                  <div className="card-body">
-                    <h5 className="card-title">Loans & Mortgages</h5>
-                    <p className="card-text">Competitive rates for personal and home loans.</p>
-                  </div>
-                </div>
-              </div>
+        }}
+      >
+        <h3 className="text-center" style={{ color: "Black" }}>
+          Login
+        </h3>
+        {error && <div className="alert alert-danger">{error}</div>}
+        <form onSubmit={handleLogin}>
+          <div className="mb-3">
+            <label className="form-label" style={{ color: "black" }}>
+              Email address
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              style={{ borderColor: "#607d8b", borderRadius: "8px" }}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label" style={{ color: "black" }}>
+              Password
+            </label>
+            <div className="input-group">
+              <input 
+                type={showPassword ? "text" : "password"}
+                className="form-control"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                style={{ borderColor: "black", borderRadius: "8px" }}
+              />
+              <button
+                className="btn btn-outline-secondary"
+                style={{color:"black" ,borderColor:"black"}}
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
             </div>
           </div>
-  
-  
-          <footer className="bg-dark text-white text-center py-4">
-            <p>&copy; 2025 MyBank. All Rights Reserved.</p>
-          </footer>
-  
-  
-  
-        </div>
-  
-      </>
-    )
-}
+          <p>
+            Don't have an account? <Link to="/registration" style={{ color: "white" }}>Register here</Link>
+          </p>
 
-export default Dashboard
+
+          <p>
+           ForgotPassword? <Link to="/forgot-password" style={{ color: "white" }}>ForgotPassword</Link>
+          </p>
+          <div className="mb-3 form-check">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              checked={rememberMe}
+              onClick={()=> console.log("password remembered")}
+              
+              onChange={() => setRememberMe(!rememberMe)}
+            />
+            <label className="form-check-label" style={{ color: "black" }}>
+              Remember Me
+            </label>
+          </div>
+          <button
+            type="submit"
+            className="btn btn-primary w-100"
+            style={{ backgroundColor: "GrayText", borderColor:"black",borderRadius: "8px" }}
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+    </div>
+  );
+};
+
+export default LoginPage;
