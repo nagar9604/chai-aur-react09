@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white text-center py-3">
+    <footer className="custom-navbar text-white text-center py-3">
       <p>&copy; 2025 Home Appliance Service. All rights reserved.</p>
       <p>
         <a href="/privacy" className="text-white">Privacy Policy</a> |{" "}

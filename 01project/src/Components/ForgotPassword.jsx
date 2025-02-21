@@ -22,12 +22,15 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="center-container" style={{backgroundColor:"grey"}}>
+    <div className="center-container" style={{backgroundColor:"gray"}}>
     <div
       className=" container-fluid d-flex justify-content-center align-items-center"
       style={{
-        height: "100vh",
-        backgroundColor: "#f4f7f6",
+        height: "75vh",
+        backgroundImage: 'url("https://img.freepik.com/free-photo/volume-abstract-graphic-loneliness-desk_1258-258.jpg?ga=GA1.1.789058358.1740063125&semt=ais_hybrid")',
+        backgroundSize: 'cover',
+        backdropFilter:'blur(110vh)',
+        zIndex:-1, 
         display: "flex",
         flexDirection: "column",
       }}
@@ -37,17 +40,18 @@ const ForgotPassword = () => {
         style={{
           width: "400px",
           borderRadius: "10px",
-          backgroundColor: "#fff",
+          backgroundColor: 'rgba(300, 300, 300, 0.4)',
+
         }}
       >
-        <h3 className="text-center" style={{ color: "#607d8b" }}>
+        <h3 className="text-center" style={{ color: "black" }}>
           Forgot Password
         </h3>
         {error && <div className="alert alert-danger">{error}</div>}
         {message && <div className="alert alert-success">{message}</div>}
         <form onSubmit={handleResetPassword}>
           <div className="mb-3">
-            <label className="form-label" style={{ color: "#607d8b" }}>
+            <label className="form-label" style={{ color: "black" }}>
               Email address
             </label>
             <input
@@ -56,15 +60,16 @@ const ForgotPassword = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={{ borderColor: "#607d8b", borderRadius: "8px" }}
+              style={{ borderColor: "black", borderRadius: "8px" }}
             />
           </div>
           <button
             type="submit"
             className="btn btn-primary w-100"
             style={{
-              backgroundColor: "#607d8b",
+              backgroundColor: "gray",
               borderRadius: "8px",
+              borderColor:"black"
             }}
           >
             Reset Password

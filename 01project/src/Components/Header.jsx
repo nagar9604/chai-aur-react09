@@ -5,13 +5,14 @@ const Header = () => {
   const [toggle, setToggle] = useState(true);
   return (
     <header>
-      <nav className="navbar" data-bs-theme="dark">
-      <div className="container-fluid">
-          <img src="https://tse4.mm.bing.net/th?id=OIP.8Kx2sSeO1iiDfgayRlZHLgHaFj&pid=Api&P=0&h=180" alt="logo" width="50" height="auto"/>
-          <h6 className="navbar-nav mr-auto text-white"> HOME APPLIANCES AND SERVICES</h6>
+      
+      <div className="logo-text-container" style={{backgroundColor:"#384959",color:"white"}}>
+        <div>
+          <img src="https://cdn-icons-png.freepik.com/256/5180/5180052.png?ga=GA1.1.789058358.1740063125&semt=ais_hybrid" alt="logo" width="3%" height="3%"/>  HOME APPLIANCES AND SERVICES
+          </div> 
           </div>    
-      </nav>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-black">
+      
+      <nav className="custom-navbar navbar-expand-lg navbar-dark ">
         <div className="container-fluid">
         
           <button

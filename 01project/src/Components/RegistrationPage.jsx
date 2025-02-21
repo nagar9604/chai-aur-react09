@@ -46,17 +46,21 @@ const RegistrationPage = () => {
     <div 
       className="container-fluid d-flex justify-content-center align-items-center" 
       style={{ 
-        height: '100vh', 
-        backgroundColor: '#f4f7f6', 
+        height: '30%', 
+        
+        backgroundImage: 'url("https://img.freepik.com/free-photo/volume-abstract-graphic-loneliness-desk_1258-258.jpg?ga=GA1.1.789058358.1740063125&semt=ais_hybrid")',
+        backgroundSize: 'cover',
+        backdropFilter:'blur(110vh)',
+        zIndex:-1, 
         display: 'flex', 
         flexDirection: 'column' 
       }}
     >
-      <div className="card p-4 shadow" style={{ width: '400px', borderRadius: '10px', backgroundColor: '#fff' }}>
-        <h2 className="text-center mb-4" style={{ color: '#607d8b' }}>Register</h2>
+      <div className="card p-4 shadow" style={{ width: '400px', borderRadius: '10px', backgroundColor: 'rgba(300, 300, 300, 0.4)' }}>
+        <h2 className="text-center mb-4" style={{ color: 'black' }}>Register</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="username" className="form-label" style={{ color: '#607d8b' }}>Username</label>
+            <label htmlFor="username" className="form-label" style={{ color: 'black' }}>Username</label>
             <input
               type="text"
               className="form-control"
@@ -64,12 +68,12 @@ const RegistrationPage = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter your username"
-              style={{ borderColor: '#607d8b', borderRadius: '8px' }}
+              style={{ borderColor: 'black', borderRadius: '8px' }}
             />
           </div>
 
           <div className="mb-3">
-            <label htmlFor="email" className="form-label" style={{ color: '#607d8b' }}>Email</label>
+            <label htmlFor="email" className="form-label" style={{ color: 'black' }}>Email</label>
             <input
               type="email"
               className="form-control"
@@ -77,12 +81,12 @@ const RegistrationPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              style={{ borderColor: '#607d8b', borderRadius: '8px' }}
+              style={{ borderColor: 'black', borderRadius: '8px' }}
             />
           </div>
 
           <div className="mb-3">
-            <label htmlFor="password" className="form-label" style={{ color: '#607d8b' }}>Password</label>
+            <label htmlFor="password" className="form-label" style={{ color: 'black' }}>Password</label>
             <input
               type="password"
               className="form-control"
@@ -90,12 +94,12 @@ const RegistrationPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              style={{ borderColor: '#607d8b', borderRadius: '8px' }}
+              style={{ borderColor: 'black', borderRadius: '8px' }}
             />
           </div>
 
           <div className="mb-3">
-            <label htmlFor="confirmPassword" className="form-label" style={{ color: '#607d8b' }}>Confirm Password</label>
+            <label htmlFor="confirmPassword" className="form-label" style={{ color: 'black' }}>Confirm Password</label>
             <input
               type="password"
               className="form-control"
@@ -103,21 +107,21 @@ const RegistrationPage = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm your password"
-              style={{ borderColor: '#607d8b', borderRadius: '8px' }}
+              style={{ borderColor: 'black', borderRadius: '8px' }}
             />
           </div>
 
           {error && <div className="alert alert-danger">{error}</div>}
 
           <div className="d-grid">
-            <button type="submit" className="btn btn-primary" disabled={loading} style={{ backgroundColor: '#607d8b', borderRadius: '8px' }}>
+            <button type="submit" className="btn btn-primary" disabled={loading} style={{ backgroundColor: 'gray', borderColor:"black",borderRadius: '8px' }}>
               {loading ? 'Registering...' : 'Register'}
             </button>
           </div>
         </form>
 
         <div className="text-center mt-3">
-          <p>Already have an account? <Link to="/login" style={{ color: '#607d8b' }}>Login here</Link></p>
+          <p>Already have an account? <Link to="/login" style={{ color: 'light-blue' }}>Login here</Link></p>
         </div>
       </div>
     </div>

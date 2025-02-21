@@ -37,7 +37,7 @@ const Complain = () => {
     <div 
       className="container-fluid d-flex justify-content-center align-items-center" 
       style={{ 
-        height: '100vh', 
+        height: '75vh', 
         backgroundColor: '#f4f7f6', 
         display: 'flex', 
         flexDirection: 'column' 

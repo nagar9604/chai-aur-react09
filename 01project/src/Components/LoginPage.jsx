@@ -27,12 +27,10 @@ const LoginPage = () => {
     <div
       className="container-fluid d-flex justify-content-center align-items-center"
       style={{
-        height: "100vh",
-        
-        
-        backgroundImage: 'url("https://tse3.mm.bing.net/th?id=OIP.OgreYwyLQ_iccSbOnHosIAHaEK&pid=Api&P=0&h=180")',
+        height: "75vh",
+        backgroundImage:'url("https://img.freepik.com/free-photo/volume-abstract-graphic-loneliness-desk_1258-258.jpg?ga=GA1.1.789058358.1740063125&semt=ais_hybrid")',
         backgroundSize: 'cover',
-        backdropFilter:'blur(110vh)',
+        backdropFilter:'blur(75vh)',
         zIndex:-1,
         display: "flex",
         flexDirection: "column",
@@ -71,7 +69,7 @@ const LoginPage = () => {
               Password
             </label>
             <div className="input-group">
-              <input
+              <input 
                 type={showPassword ? "text" : "password"}
                 className="form-control"
                 value={password}
@@ -90,12 +88,12 @@ const LoginPage = () => {
             </div>
           </div>
           <p>
-            Don't have an account? <Link to="/registration" style={{ color: "blue" }}>Register here</Link>
+            Don't have an account? <Link to="/registration" style={{ color: "light-blue" }}>Register here</Link>
           </p>
 
 
           <p>
-           ForgotPassword? <Link to="/forgot-password" style={{ color: "blue" }}>ForgotPassword</Link>
+           ForgotPassword? <Link to="/forgot-password" style={{ color: "light-blue" }}>ForgotPassword</Link>
           </p>
           <div className="mb-3 form-check">
             <input
